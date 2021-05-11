@@ -1,3 +1,30 @@
+# Openacademy
+
+This resporitory is excersise from Odoo's docuemnt.
+https://www.odoo.com/documentation/14.0/developer/howtos/backend.html?highlight=admin
+
+## Installation
+
+Create vituarlvenv
+
+```bash
+python3 -m venv odoo-venv
+```
+
+Install requirement
+
+```bash
+source odoo-venv/bin/activate
+pip3 install wheel
+pip3 install requirement.txt
+```
+
+## Usage
+
+```python
+python3 odoo/odoo-bin -u openacademy -d db_name --config=config.ini
+```
+
 [![Build Status](http://runbot.odoo.com/runbot/badge/flat/1/master.svg)](http://runbot.odoo.com/runbot)
 [![Tech Doc](http://img.shields.io/badge/master-docs-875A7B.svg?style=flat&colorA=8F8F8F)](http://www.odoo.com/documentation/master)
 [![Help](http://img.shields.io/badge/master-help-875A7B.svg?style=flat&colorA=8F8F8F)](https://www.odoo.com/forum/help-1)
@@ -30,3 +57,4 @@ For a standard installation please follow the <a href="https://www.odoo.com/docu
 from the documentation.
 
 To learn the software, we recommend the <a href="https://www.odoo.com/slides">Odoo eLearning</a>, or <a href="https://www.odoo.com/page/scale-up-business-game">Scale-up</a>, the <a href="https://www.odoo.com/page/scale-up-business-game">business game</a>. Developers can start with <a href="https://www.odoo.com/documentation/14.0/tutorials.html">the developer tutorials</a>
+
