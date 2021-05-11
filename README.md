@@ -1,0 +1,2 @@
+# openacademy
+odoo training 
