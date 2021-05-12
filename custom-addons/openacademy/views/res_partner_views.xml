@@ -1,0 +1,24 @@
+<odoo>
+    <record model="ir.ui.view" id="res_partner_view">
+        <field name="name">partner.instructor</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <group>
+                <notebook position="inside">
+                </notebook>
+            </group>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_contact_list">
+        <field name="name">Contacts</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree, form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Create the first attendees</p>
+        </field>
+    </record>
+    <menuitem name="Configure" id="configure_menu" parent="openacademy_menu"/>
+    <menuitem name="Contacts" id="contact_menu" parent="configure_menu" action="action_contact_list"/>
+</odoo>

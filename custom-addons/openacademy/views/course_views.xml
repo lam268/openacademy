@@ -1,9 +1,52 @@
 <odoo>
+     <record model="ir.ui.view" id="course_form_view">
+      <field name="name">course.form</field>
+      <field name="model">openacademy.course</field>
+      <field name="arch" type="xml">
+        <form string="Courses">
+            <group>
+              <field name="name"/>
+              <field name="responsive_id"/>
+            </group>
+            <notebook>
+              <page string="Description" name="descr">
+                  <field name="description"/>
+              </page>
+            </notebook>
+        </form>
+      </field>
+  </record>
+
+    <record model="ir.ui.view" id="course_search_view">
+        <field name="name">course.search</field>
+        <field name="model">openacademy.course</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="description"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="course_tree_view">
+        <field name="name">course.tree</field>
+        <field name="model">openacademy.course</field>
+        <field name="arch" type="xml">
+            <tree string="Course Tree">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="responsive_id"/>
+            </tree>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id ="action_openacademy_course">
         <field name="name">Course</field>
         <field name="res_model">openacademy.course</field>
         <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">Create the first course</p>
+        </field>
     </record>
-    <menuitem name="Open Academy" id="menu_root" sequence="10"/>
-    <menuitem name="Courses" id="openacademy_courses" parent="menu_root" action="action_openacademy_course" groups="base.group_user"/>
+    <menuitem name="Courses" id="openacademy_courses" parent="openacademy_menu" action="action_openacademy_course" groups="base.group_user"/>
 </odoo>
