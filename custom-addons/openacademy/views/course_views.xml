@@ -1,22 +1,21 @@
 <odoo>
-    <record model="ir.ui.view" id="course_from_view">
-        <field name="name">course.form</field>
-        <field name="model">openacademy.course</field>
-        <field name="arch" type="xml">
-            <form string="Course form">
-            <group colspan="4">
-                <group colspan="2" col="2">
-                    <field name="name"/>
-                </group>
-                <notebook colspan="4" name="des">
-                    <page string="Description">
-                        <field name="description"/>
-                    </page>
-                </notebook>
+     <record model="ir.ui.view" id="course_form_view">
+      <field name="name">course.form</field>
+      <field name="model">openacademy.course</field>
+      <field name="arch" type="xml">
+        <form string="Courses">
+            <group>
+              <field name="name"/>
+              <field name="responsive_id"/>
             </group>
+            <notebook>
+              <page string="Description" name="descr">
+                  <field name="description"/>
+              </page>
+            </notebook>
         </form>
-        </field>
-    </record>
+      </field>
+  </record>
 
     <record model="ir.ui.view" id="course_search_view">
         <field name="name">course.search</field>
@@ -36,6 +35,7 @@
             <tree string="Course Tree">
                 <field name="name"/>
                 <field name="description"/>
+                <field name="responsive_id"/>
             </tree>
         </field>
     </record>
