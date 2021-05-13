@@ -1,6 +1,4 @@
 <odoo>
-    <data>
         <menuitem id="main_openacacdemy_menu_root" name="Open Academy"/>
          <menuitem name="Open Academy" id="openacademy_menu" parent="main_openacacdemy_menu_root" sequence="10"/>
-    </data>
 </odoo>

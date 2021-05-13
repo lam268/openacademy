@@ -11,11 +11,25 @@ class Course(models.Model):
 
     _sql_constraints = [
         ('name_description_check',
-         'CHECK(name !=description',
+         'CHECK(name != description)',
          "The title of the course should not be the description"),
 
         ('name_unique',
-        'UNIQUE(name)',
-        "The course title must be unique")
+         'UNIQUE(name)',
+         "The course title must be unique"),
     ]
+
+    def copy(self, default = None):
+        default = dict(default or {})
+
+        copied_count = self.search_count(
+            [('name', '=like', 'Copy of %{}'.format(self.name))]
+        )
+        if not copied_count:
+            new = ('Copy of {}').format(self.name)
+        else:
+            new = ("Copy of {} ({})").format(self.name, copied_count)
+        default['name'] = new
+        return super(Course, self).copy(default)
+
 
