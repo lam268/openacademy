@@ -12,6 +12,14 @@
               <page string="Description" name="descr">
                   <field name="description"/>
               </page>
+                <page string="Sessions" name="session">
+                  <field name="session_ids">
+                      <tree string="Registered sessions">
+                          <field name="name"/>
+                          <field name="instructor_id"/>
+                      </tree>
+                  </field>
+              </page>
             </notebook>
         </form>
       </field>
@@ -24,6 +32,12 @@
             <search>
                 <field name="name"/>
                 <field name="description"/>
+                <filter name="my_courses" string ="My Courses"
+                    domain="[('responsive_id', '=', uid)]"/>
+                <group>
+                    <filter string="Responsible" name="Responsive"
+                       context="{'group_by': 'responsive_id'}"/>
+                </group>
             </search>
         </field>
     </record>
@@ -48,5 +62,5 @@
           <p class="oe_view_nocontent_create">Create the first course</p>
         </field>
     </record>
-    <menuitem name="Courses" id="openacademy_courses" parent="openacademy_menu" action="action_openacademy_course" groups="base.group_user"/>
+    <menuitem name="Courses" id="openacademy_courses" parent="openacademy_menu" action="action_openacademy_course" groups="base.group_user,group_openacademy_manager,group_openacademy_user"/>
 </odoo>
